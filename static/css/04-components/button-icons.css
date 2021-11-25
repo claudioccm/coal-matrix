@@ -1,0 +1,50 @@
+.button[data-icon-before],
+.button[data-icon-after] {
+    display: inline-flex;
+    align-items: center;
+  }
+
+  .button[data-icon-before]:before { content: attr(data-icon-before); }
+  .button[data-icon-after]:after  { content: attr(data-icon-after); }
+
+  .button[data-icon-before]:before,
+  .button[data-icon-after]:after {
+    font-family: 'Material Icons';
+    font-weight: normal;
+    font-style: normal;
+    font-size: 24px;  /* Preferred icon size */
+    display: inline-block;
+    line-height: 1;
+    text-transform: none;
+    letter-spacing: normal;
+    word-wrap: normal;
+    white-space: nowrap;
+    direction: ltr;
+
+    /* Support for all WebKit browsers. */
+    -webkit-font-smoothing: antialiased;
+    /* Support for Safari and Chrome. */
+    text-rendering: optimizeLegibility;
+
+    /* Support for Firefox. */
+    -moz-osx-font-smoothing: grayscale;
+
+    /* Support for IE. */
+    font-feature-settings: 'liga';
+    color: var(--button-color);
+    line-height: .7;
+    width: 16px;
+    text-indent: -4px;
+  }
+
+  .button[data-icon-before]:before { margin-right: var(--s-1); }
+  .button[data-icon-after]:after   { margin-left: var(--s-1); }
+
+  .button[data-icon-before]:empty:before { margin-right: 0; }
+  .button[data-icon-after]:empty:after   { margin-left: 0; }
+  
+  .button[data-icon-before]:empty,
+  .button[data-icon-after]:empty { padding: var(--button-padding-v) var(--button-padding-v); }
+
+  .button[data-style="primary"][data-icon-before]:before,
+  .button[data-style="primary"][data-icon-after]:after { color: var(--white-color); }

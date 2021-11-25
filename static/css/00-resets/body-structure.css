@@ -1,0 +1,14 @@
+body {
+  overflow-x: hidden;
+}
+
+.site-wrap {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.site-wrap > main { 
+  flex: 1; 
+  display: block;
+}

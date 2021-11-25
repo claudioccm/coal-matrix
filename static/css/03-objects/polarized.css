@@ -1,0 +1,6 @@
+.polarized {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.polarized > [data-split] { margin-right: auto; }

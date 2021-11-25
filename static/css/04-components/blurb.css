@@ -1,0 +1,32 @@
+.blurb.stack {
+  --space: var(--s-2);
+  --heading-hsl: var(--base-hsl);
+  --heading-opacity: 1;
+}
+
+.blurb__heading {
+  color: hsla(var(--heading-hsl), 1);
+  font-weight: 600;
+}
+
+.blurb[data-color="primary"] {
+  --heading-hsl: var(--primary-hsl);
+}
+.blurb[data-color="primary-light"] {
+  --heading-hsl: var(--primary-light-hsl);
+}
+.blurb[data-color="primary-dark"] {
+  --heading-hsl: var(--primary-light-hsl);
+}
+.blurb[data-color="accent"] {
+  --heading-hsl: var(--accent-dark-hsl);
+}
+.blurb[data-color="base"] {
+  --heading-hsl: var(--base-hsl);
+}
+.blurb[data-color="base-dark"] {
+  --heading-hsl: var(--base-dark-hsl);
+}
+.blurb[data-color="base-light"] {
+  --heading-hsl: var(--base-light-hsl);
+}

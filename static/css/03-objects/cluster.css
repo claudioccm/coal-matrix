@@ -1,0 +1,12 @@
+.cluster {
+  --space: var(--s0, 1rem);
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--space);
+  justify-content: flex-start;
+}
+
+.cluster[data-align="left"]   { justify-content: flex-start; }
+.cluster[data-align="right"]  { justify-content: flex-end; }
+.cluster[data-align="center"] { justify-content: center; }

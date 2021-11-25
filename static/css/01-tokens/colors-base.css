@@ -1,0 +1,86 @@
+:root {
+  /* Official Colors  */
+  --primary-hsl: 192, 70%, 43%;
+  --primary-dark-hsl: 200, 95%, 14%;
+  --primary-light-hsl: 199, 64%, 73%;
+  
+  --base-hsl: 200, 100%, 6%;
+  --base-dark-hsl: 203, 13%, 33%;
+  --base-light-hsl: 203, 13%, 33%;
+  --base-ultralight-hsl: 200, 5%, 89%;
+  
+  --accent-hsl: 43, 100%, 51%;
+  --accent-dark-hsl: 32, 100%, 49%;
+
+  /* Alisases */
+  --dark-hsl: 202, 24%, 21%;
+  --highlight-hsl: var(--primary-dark-hsl);
+  --light-hsl: var(--base-ultralight-hsl);
+  --lighter-hsl: 180, 14%, 99%;
+
+
+  /* HSLA variables */
+  --primary-color: hsla(var(--primary-hsl), 1);
+  --primary-dark-color: hsla(var(--primary-dark-hsl), 1);
+  --primary-light-color: hsla(var(--primary-light-hsl), 1);
+  
+  --base-color: hsla(var(--base-hsl), 1);
+  --base-dark-color: hsla(var(--base-dark-hsl), 1);
+  --base-light-color: hsla(var(--base-light-hsl), 1);
+  --base-ultralight-color: hsla(var(--base-ultralight-hsl), 1);
+  
+  --accent-color: hsla(var(--accent-hsl), 1);
+  --accent-dark-color: hsla(var(--accent-dark-hsl), 1);
+
+
+  /* baseline colors */
+  --white-hsl: 0, 0%, 100%;  
+  --white-color: hsla(var(--white-hsl), 1);  
+  
+  --black-hsl: 0, 0%, 5%;  
+  --black-color: hsla(var(--black-hsl), 1);
+  
+  --red-hsl: 347, 58%, 46%;  
+  --red-color: hsla(var(--red-hsl), 1);  
+    
+  --green-hsl: 174, 62%, 47%;
+  --green-color: hsla(var(--green-hsl), 1);
+    
+  --yellow-hsl: 37, 98%, 53%;
+  --yellow-color: hsla(var(--yellow-hsl), 1);
+  
+  /* Aliases */
+  --fail-color: var(--red-color); 
+  --error-color: var(--red-color);
+  --warning-color: var(--yellow-color);
+  --success-color: var(--green-color);
+}
+
+/* Color Utilities */
+.color\:white     { color: var(--white-color); }
+.color\:black     { color: var(--black-color); }
+
+.color\:red       { color: var(--red-color); }
+.color\:error     { color: var(--error-color); }
+.color\:fail      { color: var(--fail-color); }
+
+.color\:green     { color: var(--green-color); }
+.color\:success   { color: var(--success-color); }
+
+.color\:yellow    { color: var(--yellow-color); }
+.color\:warning   { color: var(--warning-color); }
+
+/* Background-color Utilities */
+.bg\:white        { background-color: var(--white-color); }
+.bg\:black        { background-color: var(--black-color); }
+
+.bg\:red          { background-color: var(--red-color); }
+.bg\:error        { background-color: var(--error-color); }
+.bg\:fail         { background-color: var(--fail-color); }
+
+.bg\:green        { background-color: var(--green-color); }
+.bg\:success      { background-color: var(--success-color); }
+
+.bg\:yellow       { background-color: var(--yellow-color); }
+.bg\:warning      { background-color: var(--warning-color); }
+
