@@ -14,7 +14,7 @@
     </center-l>
 
     <div class="matrix-section">
-      <matrix-section />
+      <matrix-section-2 />
     </div>
       
     
@@ -24,15 +24,17 @@
 
 <script>
 import baseSection from '@/components/sections/baseSection.vue'
-import matrixSection from '@/components/sections/matrixSection.vue'
+import matrixSection2 from '@/components/sections/matrixSection2.vue'
 import centerL from '@/components/objects/centerL.vue'
 import switcherL from '@/components/objects/switcherL.vue'
+import stackL from '@/components/objects/stackL.vue'
 
 export default {
   components: {
     switcherL,
     centerL,
-    matrixSection,
+    stackL,
+    matrixSection2,
     baseSection,
   }
 }

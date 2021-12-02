@@ -1,23 +1,8 @@
 :root {
   /* Official Colors  */
-  --primary-hsl: 192, 70%, 43%;
-  --primary-dark-hsl: 200, 95%, 14%;
-  --primary-light-hsl: 199, 64%, 73%;
-  
-  --base-hsl: 200, 100%, 6%;
-  --base-dark-hsl: 203, 13%, 33%;
-  --base-light-hsl: 203, 13%, 33%;
-  --base-ultralight-hsl: 200, 5%, 89%;
-  
+  --primary-hsl: 22, 68%, 44%;
+  --base-hsl: 192, 72%, 21%;
   --accent-hsl: 43, 100%, 51%;
-  --accent-dark-hsl: 32, 100%, 49%;
-
-  /* Alisases */
-  --dark-hsl: 202, 24%, 21%;
-  --highlight-hsl: var(--primary-dark-hsl);
-  --light-hsl: var(--base-ultralight-hsl);
-  --lighter-hsl: 180, 14%, 99%;
-
 
   /* HSLA variables */
   --primary-color: hsla(var(--primary-hsl), 1);
