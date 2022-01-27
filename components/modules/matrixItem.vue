@@ -1,6 +1,6 @@
 <template>
   <div class="matrix-item" :active='active' @click="activate()">
-    <div class="stack">
+    <div class="grid-item | stack">
       <div class="base | stack">
         <div class="index">
           <span class="track">Phase <span class="phase">{{phase}}</span></span> 
@@ -22,8 +22,33 @@
         </div>
         
       </div>
-      <div class="extra">
-        <slot></slot>
+    </div>
+
+    <div class="modal | stack">
+      <div class="modal-content">
+        <div class="base | stack">
+          <div class="index">
+            <span class="track">Phase <span class="phase">{{phase}}</span></span> 
+            <span class="track">Pillar <span class="pillar">{{pillar}}</span></span>
+          </div>
+          <h3>
+            <span v-if="phase == '1'">Pre-closure Planning</span>
+            <span v-if="phase == '2'">Closure</span>
+            <span v-if="phase == '3'">Regional Transition</span>
+          </h3>
+          <h4>
+            <span v-if="pillar =='1'">Institutional Governance</span>
+            <span v-if="pillar =='2'">People and Communities</span>
+            <span v-if="pillar =='3'">Environmental Reclamation and Re-purposing of Land and Assets</span>
+          </h4>
+        </div>
+        <ul class="extra">
+          <slot></slot>
+        </ul>
+        <ul v-if="resources.length > 0" class="files">
+          <h4>Resources</h4>
+          <li v-for="i in resources" :key="title"><a :href="i.url" targe="_blank">{{i.title}}</a></li>
+        </ul>
       </div>
     </div>
   </div>
@@ -56,108 +81,160 @@
       activate() {
         this.active =  !this.active;
       }
-    },
+    }
+  
   }
 </script>
 
 <style scoped>
+h3, h4 {
+  --space: 0;
+  font-size: 100%;
+  color: var(--white-color);
+}
+
+h3 {
+  text-transform: uppercase;
+  font-weight: 400;
+}
+
+h4 {
+  position: relative;
+  padding-bottom: var(--s1);
+}
+
+h4:after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: -1rem;
+  height: 4px;
+  width: 80px;
+  background-color: var(--primary-color);
+}
+
 .matrix-item {
   display: flex;
   align-items: stretch;
   justify-content: stretch;
 }
 
-
-.matrix-item > div {
+.grid-item {
   width: 100%;
   width: -webkit-fill-available;
   display: flex;
-  align-items: center;
   justify-content: center;
   margin: var(--s-1);
   padding: var(--s1);
-  background-color: #f4f6f7;
+  padding-left: 5rem;
+  
   transform: scale(1);
   transform-origin: center;
   transition: all .5s ease;
+  color: var(--white-color);
 }
 
-.matrix-item > div:hover {
-  transform: scale(1.1);
-  transition: all .5s ease;
-  box-shadow: 4px 4px 16px hsla(var(--base-hsl), .3);
+.grid-item, 
+.modal-content {
+  background-image: url('/images/bg.jpg');
+  color: var(--white-color);
+  background-size: cover;
 }
 
 
-.base {
-  text-align: center;
-  gap: var(--s-3);
+.extra li {
+  list-style: none;
+  line-height: 1.3;
+  padding-block: var(--s-1);
 }
 
-.index {
-  font-family: var(--display-font);
-  text-transform: uppercase;
-  font-weight: 600;
-  display: flex;
-  gap: var(--s2);
-  align-items: flex-end;
-  justify-content: center;
-  margin-bottom: var(--s1);
-  height: 3rem;
-  
+.extra li + li {
+  border-top: 1px solid var(--white-color);
 }
 
-.index .phase,
-.index .pillar {
-  position: absolute;
-  bottom: -300%;
+.matrix-item:not([active]) .modal { display: none; }
+
+.matrix-item[active] .grid-item {
+  opacity: .3;
+}
+
+.modal {
+  position: fixed;
   left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  background-color: hsla(var(--white-hsl), .8);
+  z-index: 999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.matrix-item[active] .modal-content {
+  --maxWidth: calc(100vw - 2rem);
+  margin: 0;
+  top: 10vh;
+  padding: var(--s0);
+  margin: var(--s0);
   width: 100%;
-  text-align: center;
-  font-size: 6rem;
-  opacity: .1;
-  font-weight: 700;
-  color: var(--base-color);
-}
-
-.index .track { 
-  font-size: 80%; 
-  position: relative;
-  color: var(--primary-color);
-}
-
-h3, h4 {
-  --space: 0;
-  font-size: 100%;
-  color: var(--base-color);
-}
-
-h3 {
-  text-transform: uppercase;
-  font-weight: 400;
-  color:var(--base-color);
-}
-
-.matrix-item:not([active]) .extra { display: none; }
-
-.matrix-item[active] > div {
-  --maxWidth: 96vw;
   position: fixed;
   box-sizing: border-box;
   z-index: 1000;
-  box-shadow: 4px 4px 16px hsla(var(--base-hsl), .3);
+  box-shadow: 4px 4px 16px hsla(var(--black-hsl), .4);
   width: var(--maxWidth);
-  left:2vw;
-  padding: var(--s4) var(--s2);
+  left:0;
 }
 
-.matrix-item[active] > div:hover {
-  transform: scale(1);
+.matrix-item[active] .modal {
+
+}
+
+@media (min-width: 60em) {
+  .matrix-item[active] .modal-content {
+    --maxWidth: 100ch;  
+    margin: 0 calc(50% - 50ch);
+    top: unset;
+    padding: var(--s4) var(--s2);
+  }
+
+  .matrix-item[active] .modal-content {
+    /* padding-left: 4rem; */
+  }
 }
 
 
-.resources svg { fill: var(--base-color); }
+.resources {
+  --space: var(--s1);
+  text-align: center;
+}
+.resources svg { fill: var(--white-color); }
 .resources[disabled] { opacity: .2; }
+
+
+.files h4 { padding-bottom: 0; }
+.files h4:after { display: none; }
+
+
+ul {
+  display: flex;
+  flex-direction: column;
+}
+
+.base,
+.extra,
+.files,
+li {
+  max-width: 60ch;
+  width: 100%;
+  margin-left: auto;
+}
+
+li a {
+  color: var(--color-white);
+  text-decoration: underline;
+}
+
 
 
 </style>
