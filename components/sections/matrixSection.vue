@@ -1,6 +1,6 @@
 <template>
   <section class="matrix | center">
-    <matrix-item pillar='1' phase='1' :resources='a11' active>
+    <matrix-item pillar='1' phase='1' :resources='a11'>
         <li>Institutional Governance and Policies</li>
         <li>Stakeholder engagement and participatory planning</li>
         <li>Social inclusion policies</li>

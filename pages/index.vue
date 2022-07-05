@@ -1,6 +1,6 @@
 <template>
   <article>      
-    <center-l measure="100vw">
+    <center-l measure="1280px">
       <switcher-l>
         <hgroup>
           <h1>Closing Coal Production</h1>
@@ -14,7 +14,7 @@
     </center-l>
 
     <div class="matrix-section">
-      <matrix-section-2 />
+      <matrix-section />
     </div>
       
     
@@ -24,7 +24,7 @@
 
 <script>
 import baseSection from '@/components/sections/baseSection.vue'
-import matrixSection2 from '@/components/sections/matrixSection2.vue'
+import matrixSection from '@/components/sections/matrixSection.vue'
 import centerL from '@/components/objects/centerL.vue'
 import switcherL from '@/components/objects/switcherL.vue'
 import stackL from '@/components/objects/stackL.vue'
@@ -34,7 +34,7 @@ export default {
     switcherL,
     centerL,
     stackL,
-    matrixSection2,
+    matrixSection,
     baseSection,
   }
 }
