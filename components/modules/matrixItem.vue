@@ -48,7 +48,7 @@
         </ul>
         <ul v-if="resources.length > 0" class="files">
           <h4>Resources</h4>
-          <li v-for="i in resources" :key="title"><a :href="i.url" targe="_blank">{{i.title}}</a></li>
+          <li v-for="i in resources" :key="title"><a :href='`/files/${i.url}`' targe="_blank">{{i.title}}</a></li>
         </ul>
       </div>
     </div>
