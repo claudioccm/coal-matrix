@@ -16,6 +16,7 @@
           <span v-if="pillar =='2'">People and Communities</span>
           <span v-if="pillar =='3'">Environmental Reclamation and Re-purposing of Land and Assets</span>
         </h4>
+        <h5>{{ period }}</h5>
 
         <div class="resources" :disabled="resources.length > 0 ? false : true">
           <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 0 24 24" width="24px"><path d="M0 0h24v24H0V0z" fill="none"/><path d="M8 16h8v2H8zm0-4h8v2H8zm6-10H6c-1.1 0-2 .9-2 2v16c0 1.1.89 2 1.99 2H18c1.1 0 2-.9 2-2V8l-6-6zm4 18H6V4h7v5h5v11z"/></svg>
@@ -70,6 +71,10 @@
         type: String,
         default: ''
       },
+      period: {
+        type: String,
+        default: ''
+      },
       resources: {
         type: Array,
         default() {
@@ -99,11 +104,17 @@ h3 {
 }
 
 h4 {
-  position: relative;
-  padding-bottom: var(--s1);
+  
 }
 
-h4:after {
+h5 {
+  position: relative;
+  padding-bottom: var(--s1);
+  color: white;
+  font-size: 85%;
+}
+
+h5:after {
   content: '';
   position: absolute;
   bottom: 0;
